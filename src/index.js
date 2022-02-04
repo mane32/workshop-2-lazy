@@ -33,10 +33,14 @@ const random = () => Math.floor(Math.random() * (maximum - minimum)) + minimum;
 const nuevaImagen = createImageNode();
 const mountNode = document.getElementById("images"); //.appendChild(nuevaImagen);
 
-mountNode.append(
-    nuevaImagen,
-    createImageNode(),
-    createImageNode(),
-    createImageNode(),
-    createImageNode()
-);
+const addButton = document.querySelector("button");
+const accion = () => console.log("hey");
+
+
+addButton.addEventListener("click", accion);
+
+
+mountNode.append(nuevaImagen);
+
+   
+
