@@ -13,20 +13,30 @@
     alt=""
     />
   </div>  */
+  const maximum = 123;
+  const minimum = 1;
+const random = () => Math.floor(Math.random() * (maximum - minimum)) + minimum;
+
   const createImageNode= () => {
     const container = document.createElement("div");
     container.className = "p-4";
 
-      const imagen = document.createElement('img');
+      const imagen = document.createElement("img");
       imagen.className = "mx-auto";
       imagen.width = "320";
-      imagen.src = "https://randomfox.ca/images/2.jpg"; //TODO
+      imagen.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
 
       container.appendChild(imagen);
-      return imagen;
+      return container;
 };
 
 const nuevaImagen = createImageNode();
-const mountNode = document.getElementById("images").appendChild(nuevaImagen);
-//agregar a contenedor imagen
+const mountNode = document.getElementById("images"); //.appendChild(nuevaImagen);
 
+mountNode.append(
+    nuevaImagen,
+    createImageNode(),
+    createImageNode(),
+    createImageNode(),
+    createImageNode()
+);
