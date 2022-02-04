@@ -34,13 +34,15 @@ const nuevaImagen = createImageNode();
 const mountNode = document.getElementById("images"); //.appendChild(nuevaImagen);
 
 const addButton = document.querySelector("button");
-const accion = () => console.log("hey");
 
+const addImage = () => {
+    const newImage = createImageNode();
+    mountNode.append(newImage);
 
-addButton.addEventListener("click", accion);
+};
 
+addButton.addEventListener("click", addImage);
 
-mountNode.append(nuevaImagen);
 
    
 
