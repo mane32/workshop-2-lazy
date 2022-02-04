@@ -2,8 +2,12 @@
 const isIntersecting = (entry) => {
     return entry.isIntersecting
 };
-const accion = () => {
+const accion = (entry) => {
+    const nodo = entry.target;
 console.log("holis");
+// des registra la imagen
+observer.unobserve(nodo);
+
 };
 
 const observer = new IntersectionObserver((entries) => {
