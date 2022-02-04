@@ -21,7 +21,7 @@ const random = () => Math.floor(Math.random() * (maximum - minimum)) + minimum;
       const imagen = document.createElement("img");
       imagen.className = "mx-auto";
       imagen.width = "320";
-      imagen.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
+      imagen.dataset.src = `https://randomfox.ca/images/${random()}.jpg`; //TODO
 
       container.appendChild(imagen);
       return container;

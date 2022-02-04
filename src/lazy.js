@@ -1,17 +1,19 @@
-
 const isIntersecting = (entry) => {
-    return entry.isIntersecting
+    return entry.isIntersecting;
 };
-const accion = (entry) => {
-    const nodo = entry.target;
-console.log("holis");
-// des registra la imagen
-observer.unobserve(nodo);
+const loadImage = (entry) => {
+    const container = entry.target; //contenedor (DIV)
+    const imagen = container.firstChild;
+    const url = imagen.dataset.src;
+    //carga la imagen
+    imagen.src = url;
 
+// des registra la imagen
+observer.unobserve(container);
 };
 
 const observer = new IntersectionObserver((entries) => {
-entries.filter(isIntersecting).forEach(accion);
+entries.filter(isIntersecting).forEach(loadImage); //
 });
 //
 export const registerImage = (imagen) => {
